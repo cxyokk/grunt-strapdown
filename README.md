@@ -72,7 +72,7 @@ Follow the example config above, these are the options that the `strapdown` task
 
     *(And also in this version the template path is not yet configurable.)*
 
-4.  **Oh, what about `</xmp>` tag in the example? That 'x' looks different.**
+4.  **Oh, what about that `</xmp>` tag in the example? The 'x' looks different.**
 
     It's not the letter 'x', it's the multiplication sign '×'([wiki](http://en.wikipedia.org/wiki/Multiplication_sign)). Quote from [strapdown.js][strapdown.github]:
 
