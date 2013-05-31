@@ -2,27 +2,23 @@
 module.exports = (grunt)->
   grunt.initConfig
     strapdown:
-      test:
-        src: ['test/fixtures/*.md']
-        dest: 'temp-test'
-        theme: 'cyborg'
-
-    nodeunit:
-      test: ['test/*.{coffee,js}']
-
-    clean:
-      test: ['temp-test']
+      default:
+        src: ['path/to/*.md']
+        dest: 'output_dir'
+      change_theme:
+        src: ['path/to/*.md']
+        dest: 'output_dir'
+        theme: 'slate'
+      custom_template:
+        src: ['path/to/*.md']
+        dest: 'output_dir'
+        options:
+          template: 'path/to/your/template.html'
+          templateData:
+            charset: 'utf8'
+            version: '1.0'
+            whatever: 'you want'
 
   grunt.loadTasks 'tasks'
-  grunt.loadNpmTasks 'grunt-contrib-nodeunit'
-  grunt.loadNpmTasks 'grunt-contrib-clean'
 
-  grunt.registerTask 'mkdir', grunt.file.mkdir
-  grunt.registerTask 'test', [
-    'clean'
-    'mkdir:temp-test'
-    'strapdown'
-    'nodeunit'
-    'clean'
-  ]
-  grunt.registerTask 'default', ['test']
+  # this is just an example
